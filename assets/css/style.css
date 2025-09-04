@@ -184,3 +184,55 @@ footer {
     cursor: not-allowed;
     opacity: 0.2 !important;
 }
+
+/* Homepage specific styles */
+body.homepage {
+    background-image: 
+        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0),
+        radial-gradient(circle at 15px 15px, rgba(0,0,0,0.1) 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+.page-title-container {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+}
+
+.page-title-container h1 {
+    font-size: 6rem;
+    color: #fff;
+    text-shadow: 5px 5px 0 #000;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.page-title-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(15deg);
+    width: 350px;
+    height: 350px;
+    background-color: #ff4500;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    z-index: 1;
+}
+
+.comic-gallery .comic-card:nth-child(3n+1) {
+    transform: rotate(2deg);
+}
+.comic-gallery .comic-card:nth-child(3n+2) {
+    transform: rotate(-2deg);
+}
+.comic-gallery .comic-card:nth-child(3n+3) {
+    transform: rotate(1deg);
+}
+
+.comic-gallery .comic-card:hover {
+    transform: translateY(-10px) scale(1.05) rotate(0);
+    box-shadow: 10px 10px 0px #ff4500;
+}

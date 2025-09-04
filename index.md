@@ -1,8 +1,11 @@
 ---
 layout: default
+body_class: homepage
 ---
 
-<h1>Comics</h1>
+<div class="page-title-container">
+  <h1>Comics</h1>
+</div>
 
 <div class="comic-gallery">
   {% for comic in site.comics %}
