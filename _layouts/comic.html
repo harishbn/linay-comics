@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="comic-page">
+  <h2>{{ page.title }}</h2>
+  <p class="comic-date">{{ page.date | date: "%B %d, %Y" }}</p>
+
+  <div class="comic-strips">
+    {% for strip in page.strips %}
+      <img src="{{ strip.url | relative_url }}" alt="{{ strip.alt }}">
+    {% endfor %}
+  </div>
+</article>
