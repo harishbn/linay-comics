@@ -7,25 +7,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const strips = gallery.querySelectorAll('.strip');
     const prevBtn = gallery.querySelector('.prev-btn');
     const nextBtn = gallery.querySelector('.next-btn');
-    const prevArrow = gallery.querySelector('.prev-arrow');
-    const nextArrow = gallery.querySelector('.next-arrow');
+    const prevArrow = gallery.querySelector('.arrow.prev');
+    const nextArrow = gallery.querySelector('.arrow.next');
     const counter = gallery.querySelector('.strip-counter');
     let currentIndex = 0;
     const totalStrips = strips.length;
 
     function updateGallery() {
         strips.forEach((strip, index) => {
-            strip.style.display = index === currentIndex ? 'block' : 'none';
+            if (index === currentIndex) {
+                strip.classList.add('active');
+            } else {
+                strip.classList.remove('active');
+            }
         });
-        counter.textContent = `${currentIndex + 1} / ${totalStrips}`;
+        if (counter) {
+            counter.textContent = `${currentIndex + 1} / ${totalStrips}`;
+        }
         
         const onFirst = currentIndex === 0;
         const onLast = currentIndex === totalStrips - 1;
 
-        prevBtn.disabled = onFirst;
-        prevArrow.disabled = onFirst;
-        nextBtn.disabled = onLast;
-        nextArrow.disabled = onLast;
+        if (prevBtn) prevBtn.disabled = onFirst;
+        if (prevArrow) prevArrow.disabled = onFirst;
+        if (nextBtn) nextBtn.disabled = onLast;
+        if (nextArrow) nextArrow.disabled = onLast;
     }
 
     function showPrev() {
