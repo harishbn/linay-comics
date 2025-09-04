@@ -1,4 +1,5 @@
 ---
+layout: comic
 title: "Dynamic Due Got Ideas"
 date: 2025-09-04
 thumbnail: /comic1-dynamic-due-got-ideas-20250904/strip1.jpeg
