@@ -5,9 +5,18 @@ layout: default
   <h2>{{ page.title }}</h2>
   <p class="comic-date">{{ page.date | date: "%B %d, %Y" }}</p>
 
-  <div class="comic-strips">
-    {% for strip in page.strips %}
-      <img src="{{ strip.url | relative_url }}" alt="{{ strip.alt }}">
-    {% endfor %}
+  <div class="strip-gallery">
+    <div class="strips-container">
+      {% for strip in page.strips %}
+        <div class="strip">
+          <img src="{{ strip.url | relative_url }}" alt="{{ strip.alt }}">
+        </div>
+      {% endfor %}
+    </div>
+    <div class="gallery-nav">
+        <button class="prev-btn">Previous</button>
+        <span class="strip-counter">1 / {{ page.strips | size }}</span>
+        <button class="next-btn">Next</button>
+    </div>
   </div>
 </article>

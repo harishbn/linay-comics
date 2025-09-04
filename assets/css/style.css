@@ -98,3 +98,50 @@ footer {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+/* Strip Gallery */
+.strip-gallery {
+    text-align: center;
+}
+
+.strip {
+    display: none; /* Hidden by default */
+}
+
+.strip:first-child {
+    display: block; /* Show first strip */
+}
+
+.strip img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.gallery-nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gallery-nav button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+.gallery-nav button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.strip-counter {
+    font-size: 1rem;
+    color: #666;
+}
