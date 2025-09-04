@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const strips = gallery.querySelectorAll('.strip');
     const prevBtn = gallery.querySelector('.prev-btn');
     const nextBtn = gallery.querySelector('.next-btn');
+    const prevArrow = gallery.querySelector('.prev-arrow');
+    const nextArrow = gallery.querySelector('.next-arrow');
     const counter = gallery.querySelector('.strip-counter');
     let currentIndex = 0;
     const totalStrips = strips.length;
@@ -16,29 +18,43 @@ document.addEventListener('DOMContentLoaded', function() {
             strip.style.display = index === currentIndex ? 'block' : 'none';
         });
         counter.textContent = `${currentIndex + 1} / ${totalStrips}`;
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex === totalStrips - 1;
+        
+        const onFirst = currentIndex === 0;
+        const onLast = currentIndex === totalStrips - 1;
+
+        prevBtn.disabled = onFirst;
+        prevArrow.disabled = onFirst;
+        nextBtn.disabled = onLast;
+        nextArrow.disabled = onLast;
     }
 
-    if (strips.length > 0) {
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateGallery();
-            }
-        });
+    function showPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateGallery();
+        }
+    }
 
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < totalStrips - 1) {
-                currentIndex++;
-                updateGallery();
-            }
-        });
+    function showNext() {
+        if (currentIndex < totalStrips - 1) {
+            currentIndex++;
+            updateGallery();
+        }
+    }
+
+    if (strips.length > 1) {
+        prevBtn.addEventListener('click', showPrev);
+        prevArrow.addEventListener('click', showPrev);
+
+        nextBtn.addEventListener('click', showNext);
+        nextArrow.addEventListener('click', showNext);
 
         updateGallery();
     } else {
-        // Hide nav if no strips
+        // Hide nav if only one strip
         const nav = gallery.querySelector('.gallery-nav');
         if(nav) nav.style.display = 'none';
+        if(prevArrow) prevArrow.style.display = 'none';
+        if(nextArrow) nextArrow.style.display = 'none';
     }
 });

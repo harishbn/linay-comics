@@ -128,8 +128,8 @@ footer {
 }
 
 .gallery-nav button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem; /* Larger buttons */
+    font-size: 1.1rem;
     cursor: pointer;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -144,4 +144,43 @@ footer {
 .strip-counter {
     font-size: 1rem;
     color: #666;
+}
+
+.strips-container {
+    position: relative;
+}
+
+.prev-arrow, .next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.strips-container:hover .prev-arrow,
+.strips-container:hover .next-arrow {
+    opacity: 1;
+}
+
+.prev-arrow {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.next-arrow {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.prev-arrow:disabled, .next-arrow:disabled {
+    cursor: not-allowed;
+    opacity: 0.2 !important;
 }
