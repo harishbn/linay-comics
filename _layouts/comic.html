@@ -4,6 +4,7 @@ layout: default
 <article class="comic-page">
   <h2>{{ page.title }}</h2>
   <p class="comic-date">{{ page.date | date: "%B %d, %Y" }}</p>
+  <p class="comic-strips-count">This comic has {{ page.strips | size }} pages. Use the arrows or buttons to see them all!</p>
 
   <div class="strip-gallery">
     <div class="strips-container">
