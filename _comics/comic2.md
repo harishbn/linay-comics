@@ -12,6 +12,10 @@ strips:
     alt: "Strip 3"
   - url: /comics/20250825-dynamic-dude-and-killer-algae/strip4.jpeg
     alt: "Strip 4"
+  - url: /comics/20250825-dynamic-dude-and-killer-algae/strip5.jpeg
+    alt: "Strip 5"
+  - url: /comics/20250825-dynamic-dude-and-killer-algae/strip6.jpeg
+    alt: "Strip 6"
 ---
 
 This is the second comic featuring Dynamic Dude and his encounter with killer algae.
