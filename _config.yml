@@ -1,6 +1,6 @@
 title: Linay Aryan's Comics
 description: A collection of comics by Linay Aryan.
-theme: hacker
+theme: minima
 collections:
   comics:
     output: true
