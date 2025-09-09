@@ -94,6 +94,7 @@ body.homepage header h1 {
     font-size: 2rem;
     color: #d00000;
     margin: 0 0 10px 0;
+    text-transform: none;
 }
 
 .comic-info p {
@@ -104,9 +105,10 @@ body.homepage header h1 {
 /* Comic Page Styles */
 .comic-page h2 {
     font-family: 'Bangers', cursive;
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: center;
     color: #d00000;
+    text-transform: none;
 }
 
 .comic-date {
