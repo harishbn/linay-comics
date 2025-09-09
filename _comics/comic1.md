@@ -1,6 +1,6 @@
 ---
 layout: comic
-title: "Dynamic Dude Got Ideas"
+title: "Dynamic Dude And His Idea"
 date: 2025-09-04
 thumbnail: /comics/20250904-dynamic-dude-and-his-idea/strip1.jpeg
 strips:
